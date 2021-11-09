@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/Gbl97/API_Web_Motors/issues"
   },
-  "homepage": "https://github.com/Gbl97/API_Web_Motors#readme"
+  "homepage": "https://github.com/Gbl97/API_Web_Motors#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.3-rc.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
 }
