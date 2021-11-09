@@ -1,0 +1,19 @@
+{
+  "name": "api_web_motors",
+  "version": "1.0.0",
+  "description": "Teste Tecnico",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gbl97/API_Web_Motors.git"
+  },
+  "author": "Gabriel Pereira Alves Moreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gbl97/API_Web_Motors/issues"
+  },
+  "homepage": "https://github.com/Gbl97/API_Web_Motors#readme"
+}
