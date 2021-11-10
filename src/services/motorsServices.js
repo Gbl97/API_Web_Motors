@@ -1,5 +1,5 @@
-const { createModel, updateModel, readAllModel, readByIdModel } = require('../models/motorsModel');
-const { HTTP_CREATED, HTTP_OK_STATUS } = require('../status');
+const { createModel, updateModel, readAllModel, readByIdModel, deleteModel } = require('../models/motorsModel');
+const { HTTP_CREATED, HTTP_OK_STATUS, HTTP_NO_CONTENT } = require('../status');
 
 const createService = async ({ marca, modelo, versao, ano, quilometragem, observacao }) => {
 	const { isCreated } = await createModel({ marca, modelo, versao, ano, quilometragem, observacao });
@@ -25,9 +25,16 @@ const updateService = async ({ id, marca, modelo, versao, ano, quilometragem, ob
 	return { data: result, code: HTTP_OK_STATUS };
 };
 
+const deleteService = async (id) => {
+	const { isDeleted } = await deleteModel(id);
+
+	return { isDeleted, code: HTTP_NO_CONTENT };
+};
+
 module.exports = {
 	createService,
 	readAllService,
 	readByIdService,
-	updateService
+	updateService,
+	deleteService
 };

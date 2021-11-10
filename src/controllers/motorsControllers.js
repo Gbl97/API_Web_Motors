@@ -1,4 +1,4 @@
-const { createService, updateService, readAllService, readByIdService } = require('../services/motorsServices');
+const { createService, updateService, readAllService, readByIdService, deleteService } = require('../services/motorsServices');
 const { HTTP_SERVER_ERROR } = require('../status');
 
 const createController = async (req, res) => {
@@ -44,9 +44,21 @@ const updateController = async (req, res) => {
 	}
 };
 
+const deleteController = async (req, res) => {
+	try {
+		const { id } = req.params;
+		const { isDeleted, code } = await deleteService(id);
+
+		if (isDeleted) return res.status(code).json();
+	} catch (e) {
+		return res.status(HTTP_SERVER_ERROR).json({ message: e.message });
+	}
+};
+
 module.exports = {
 	createController,
 	readAllController,
 	readByIdController,
 	updateController,
+	deleteController
 };

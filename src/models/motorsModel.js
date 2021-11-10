@@ -39,9 +39,18 @@ const updateModel = async ({ id, marca, modelo, versao, ano, quilometragem, obse
 	return result;
 };
 
+const deleteModel = async (id) => {
+	const query = 'DELETE FROM tb_AnuncioWebmotors WHERE id=?';
+
+	await connection.execute(query, [id]);
+
+	return { isDeleted: true };
+};
+
 module.exports = {
 	createModel,
 	readAllModel,
 	readByIdModel,
 	updateModel,
+	deleteModel
 };
