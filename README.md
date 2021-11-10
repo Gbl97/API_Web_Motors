@@ -9,7 +9,8 @@ A construção deste teste foi realizada em um ambiente Linux, portanto os coman
 
 ## Aviso sobre a camada Model e o Banco de dados
 Este repositório não foi realizado o deploy da aplicação, por isso, é necessário que sua máquina possua o MySQl (o banco utilizado neste teste). O repositório possui também a camada Model (`src/models`), ela é responsável pela conexão com o banco. Dentro do caminho `src/models`, existe o arquivo `mysql_connection.js`,
-altere o campo `user` e `password`, adicionando o seu usuário admin com sua a respectiva senha, caso exista. Se o seu usuário padrão for o `root`, não há necessidade de alteração do campo `user`, e se o seu MySQL não possui uma senha, não há necessidade de alterar o campo `password`.
+altere o campo `user` e `password`, adicionando o seu usuário admin com sua a respectiva senha, caso exista. Se o seu usuário padrão for o `root`, não há necessidade de alteração do campo `user`, e se o seu MySQL não possui uma senha, não há necessidade de alterar o campo `password`. Para que as APIs conversem 
+com o banco, é muito importante configurar as conexões com o usuário e a senha correta.
 
 ---
 
