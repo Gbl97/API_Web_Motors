@@ -9,6 +9,22 @@ const createModel = async ({ marca, modelo, versao, ano, quilometragem, observac
 	return { isCreated: true };
 };
 
+const readAllModel = async () => {
+	const query = 'SELECT * FROM tb_AnuncioWebmotors';
+
+	const [[result]] = await connection.execute(query);
+
+	return result;
+};
+
+const readByIdModel = async (id) => {
+	const query = 'SELECT * FROM tb_AnuncioWebmotors WHERE id=?';
+
+	const [[result]] = await connection.execute(query, [id]);
+
+	return result;
+};
+
 const updateModel = async ({ id, marca, modelo, versao, ano, quilometragem, observacao }) => {
 	const queryUp = `UPDATE tb_AnuncioWebmotors SET Marca=?, Modelo=?,Versao=?, Ano=?, 
   Quilometragem=?, Observacao=?
@@ -25,5 +41,7 @@ const updateModel = async ({ id, marca, modelo, versao, ano, quilometragem, obse
 
 module.exports = {
 	createModel,
+	readAllModel,
+	readByIdModel,
 	updateModel,
 };
